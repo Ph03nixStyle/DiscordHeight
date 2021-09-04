@@ -12,7 +12,7 @@ def main():
     driver.get('https://hikaku-sitatter.com/en/')
     # Execute all the functions needed
     delete_default_people(driver)
-    add_10_names_from_json(driver)
+    add_10_names_from_json(driver, 0)
     take_screenshot(driver)
     time.sleep(5)
     driver.quit()
@@ -27,7 +27,7 @@ def delete_default_people(driver):
 
 
 
-def add_10_names_from_json(driver):
+def add_10_names_from_json(driver, page_number):
     """"Add 10 people to the website with correct name/height/gender, which is the limit."""
     # Find needed elements
     name_textbox = driver.find_element_by_id('name')
@@ -37,7 +37,7 @@ def add_10_names_from_json(driver):
     with open('liste_taille.json', 'r') as f:
         names_dict = json.load(f)
         # Add all the data into text fields then submits, for each person
-        for name, height in names_dict.items():
+        for name, height in names_dict[f'{page_number}'].items():
             name_textbox.send_keys(name)
             height_textbox.send_keys(height)
             send_button.click()
