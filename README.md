@@ -18,6 +18,12 @@ Then, put the chromedriver either in `PATH` or in the project directory.
 You must install the webdriver for your browser (download location varies depending on browser) and put it on `PATH` or in the project directory.
 (see Selenium doc, https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/).
 
+## Install the script:
+```bash
+git clone https://github.com/Ph03nixStyle/HeightComparator.git
+cd HeightComparator
+```
+
 ## Launching the script:
 Once selenium, Pillow and the webdriver are correctly setup, you may change the JSON file to put in it the people you want to compare.
 Format:
