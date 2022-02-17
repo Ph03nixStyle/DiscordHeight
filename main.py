@@ -9,16 +9,15 @@ from selenium.webdriver.chrome.options import Options
 
 
 def main():
-    """Executes the different functions of the file"""
-    # Initiates the webdriver
     options = Options()
     options.add_argument("--kiosk")
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Chrome(options=options) # ----------------- Change if not using chrome
     # Go to the height comparator website
     driver.get('https://hikaku-sitatter.com/en/')
     # Gets the JSON data
-    with open('liste_taille.json', 'r') as f:
+    with open('height_list.json', 'r') as f:
         names_dict = json.load(f)
+
     # Execute all the functions needed for each page of 10 people in the JSON
     n = 0 # total amount of images
     for i in range(int(len(names_dict)/10 + 1)):
@@ -41,6 +40,7 @@ def init_and_reset_graph(driver):
     send_button = driver.find_element_by_class_name('addInput__btn')
     # Cross element needed to cleanup the people first
     btn_del = driver.find_elements_by_class_name('btn-del')
+
     # People cleanup
     for element in btn_del:
         try:
@@ -48,11 +48,13 @@ def init_and_reset_graph(driver):
             driver.execute_script("arguments[0].click();", element)
         except:
             continue
+    
     # Adds 190 cm person
     name_textbox.send_keys("placeHolder")
     height_textbox.send_keys('190')
     send_button.click()
     time.sleep(0.5)
+
     # Then instantly removes the 190 person (cleanup again)
     btn_del = driver.find_element_by_class_name('btn-del')
     driver.execute_script("arguments[0].click();", btn_del)
@@ -67,7 +69,7 @@ def add_10_names_from_json(driver, page_number):
     send_button = driver.find_element_by_class_name('addInput__btn')
 
     # Loads JSON with names/height/gender, then add them into input fields and adds them one after another
-    with open('liste_taille.json', 'r') as f:
+    with open('height_list.json', 'r') as f:
         names_dict = json.load(f, object_pairs_hook=OrderedDict)
 
     # Add all the data into text fields then submits, for each person
@@ -78,6 +80,7 @@ def add_10_names_from_json(driver, page_number):
         name_textbox.send_keys(name)
         height_textbox.send_keys(list_data[0])
 
+        # Selects male or female
         if list_data[1] == 'm':
             male_female_buttons[0].click()
         else:
@@ -85,11 +88,6 @@ def add_10_names_from_json(driver, page_number):
         send_button.click()
         time.sleep(0.1)
     time.sleep(0.5)
-
-# left 675
-# top 1264
-# right 1768
-# bottom 117
 
 
 def take_screenshot(driver, page_number):
@@ -101,12 +99,7 @@ def take_screenshot(driver, page_number):
     full_page_screenshot = driver.get_screenshot_as_png()
     print("Full page screenshot taken")
     im = Image.open(BytesIO(full_page_screenshot))
-    print(location)
-    print(size)
-    # left = 675
-    # top = 1264
-    # right = 1768
-    # bottom = 117
+
     left = location['x'] + 300
     top = location['y']
     right = location['x'] + size['width'] - 50
