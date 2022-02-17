@@ -4,7 +4,7 @@ This script will use the website hikaku-sitatter.com to create an image of a hei
 to be added at a time, so this script automatically adds people 10, screenshots, removes, add 10 other people...etc, then edits all the screenshots together 
 and crops the white spaces. Perfect if you want to compare heights with your discord friends, for instance.
 
-Requirements:
+## Requirements:
 ```bash
 pip install selenium
 pip install Pillow
@@ -15,6 +15,7 @@ Then, put the chromedriver either in `PATH` or in the project directory.
 You must install the webdriver for your browser (download location varies depending on browser) and put it on `PATH` or in the project directory.
 (see Selenium doc, https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/).
 
+## Launching the script:
 Once selenium, Pillow and the webdriver are correctly setup, you may change the JSON file to put in it the people you want to compare.
 Format:
 ```json
