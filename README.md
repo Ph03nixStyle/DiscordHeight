@@ -10,8 +10,7 @@ and crops the white spaces. Perfect if you want to compare heights with your dis
 
 ## Requirements:
 ```bash
-pip install selenium
-pip install Pillow
+pip install selenium pillow
 ```
 - If using Chrome: once Selenium is installed, download the version corresponding to your chrome version on https://chromedriver.chromium.org/downloads.
 Then, put the chromedriver either in `PATH` or in the project directory. 
