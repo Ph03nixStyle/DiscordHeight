@@ -5,8 +5,7 @@ to be added at a time, so this script automatically adds people 10, screenshots,
 and crops the white spaces. Perfect if you want to compare heights with your discord friends, for instance.
 - Example output:
 ![alt text](https://github.com/Ph03nixStyle/HeightComparator/blob/main/final.png?raw=true)
-- Demonstration video
-![here](https://www.youtube.com/watch?v=Ckssz3Wn4m4)
+- Demonstration video [here](https://www.youtube.com/watch?v=Ckssz3Wn4m4)
 
 
 ## Requirements:
