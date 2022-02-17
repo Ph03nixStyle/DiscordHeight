@@ -3,6 +3,8 @@
 This script will use the website hikaku-sitatter.com to create an image of a height comparison of you and your friends. The website only allows 10 people
 to be added at a time, so this script automatically adds people 10, screenshots, removes, add 10 other people...etc, then edits all the screenshots together 
 and crops the white spaces. Perfect if you want to compare heights with your discord friends, for instance.
+Example output:
+![alt text](https://github.com/Ph03nixStyle/HeightComparator/blob/main/final.png?raw=true)
 
 ## Requirements:
 ```bash
