@@ -24,7 +24,7 @@ git clone https://github.com/Ph03nixStyle/HeightComparator.git
 cd HeightComparator
 ```
 
-## Launching the script:
+## Launch the script:
 Once selenium, Pillow and the webdriver are correctly setup, you may change the JSON file to put in it the people you want to compare.
 Format:
 ```json
