@@ -7,12 +7,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-"""
-POUR AJOUTER UNE NOUVELLE PERSONNE
-Il faut: Ajouter la personne dans le JSON, sachant qu'il faut faire une nouvelle page toutes les 10 personnes
-Ensuite, il faut ajouter ligne 113 le numéro de la page dans la liste des noms de fichiers de screenshots si une nouvelle page est créée
-En soit si j'étais moins flemmard faudrait d'abord trier les gens par taille pour éviter de tout décaler dans le json à chaque fois sinon mdr
-"""
 
 def main():
     """Executes the different functions of the file"""
@@ -90,6 +84,7 @@ def add_10_names_from_json(driver, page_number):
             male_female_buttons[1].click()
         send_button.click()
         time.sleep(0.1)
+    time.sleep(0.5)
 
 # left 675
 # top 1264
@@ -112,9 +107,9 @@ def take_screenshot(driver, page_number):
     # top = 1264
     # right = 1768
     # bottom = 117
-    left = location['x'] + 350
+    left = location['x'] + 300
     top = location['y']
-    right = location['x'] + size['width'] - 100
+    right = location['x'] + size['width'] - 50
     bottom = location['y'] + size['height']
 
     im = im.crop((left, top, right, bottom))
