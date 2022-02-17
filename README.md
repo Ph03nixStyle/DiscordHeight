@@ -6,9 +6,9 @@ and crops the white spaces. Perfect if you want to compare heights with your dis
 - Example output:
 ![alt text](https://github.com/Ph03nixStyle/HeightComparator/blob/main/final.png?raw=true)
 - Demonstration video
-[![alt text](https://img.youtube.com/vi/Ckssz3Wn4m4/0.jpg)](https://www.youtube.com/watch?v=Ckssz3Wn4m4)
+![alt text](https://www.youtube.com/watch?v=Ckssz3Wn4m4)
 
-https://www.youtube.com/watch?v=Ckssz3Wn4m4
+
 ## Requirements:
 ```bash
 pip install selenium
